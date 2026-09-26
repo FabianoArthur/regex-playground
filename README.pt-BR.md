@@ -2,14 +2,14 @@
 
 [English](README.md) · **Português (Brasil)**
 
-[![CI](https://github.com/FabianoArthur/aula-1/actions/workflows/ci.yml/badge.svg)](https://github.com/FabianoArthur/aula-1/actions/workflows/ci.yml)
+[![CI](https://github.com/FabianoArthur/regex-playground/actions/workflows/ci.yml/badge.svg)](https://github.com/FabianoArthur/regex-playground/actions/workflows/ci.yml)
 [![Licença: MIT](https://img.shields.io/badge/licen%C3%A7a-MIT-blue.svg)](LICENSE)
 
 Escreva uma expressão regular, veja o que ela casa enquanto digita e leia o que cada parte significa.
 As explicações vêm de um parser de regex escrito do zero. Não há IA nem servidor envolvidos, e nada do
 que você digita sai da página.
 
-**Demo:** <https://fabianoarthur.github.io/aula-1/>
+**Demo:** <https://fabianoarthur.github.io/regex-playground/>
 
 ![Digitando um padrão de data: os matches acendem no texto enquanto a árvore de explicação se monta](docs/assets/demo.gif)
 

@@ -2,14 +2,14 @@
 
 **English** · [Português (Brasil)](README.pt-BR.md)
 
-[![CI](https://github.com/FabianoArthur/aula-1/actions/workflows/ci.yml/badge.svg)](https://github.com/FabianoArthur/aula-1/actions/workflows/ci.yml)
+[![CI](https://github.com/FabianoArthur/regex-playground/actions/workflows/ci.yml/badge.svg)](https://github.com/FabianoArthur/regex-playground/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 Write a regular expression, see what it matches as you type, and read what every part of it means in
 plain English. The explanations come from a regex parser written from scratch. No AI and no server are
 involved, and nothing you type leaves the page.
 
-**Live demo:** <https://fabianoarthur.github.io/aula-1/>
+**Live demo:** <https://fabianoarthur.github.io/regex-playground/>
 
 ![Typing a date pattern: matches light up in the text while the explanation tree builds up](docs/assets/demo.gif)
 
