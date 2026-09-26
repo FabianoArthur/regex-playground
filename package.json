@@ -1,0 +1,30 @@
+{
+  "name": "regex-playground",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Write a regular expression, see what it matches and read what every part of it means, in plain English.",
+  "type": "module",
+  "license": "MIT",
+  "author": "Fabiano Arthur",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.11.0",
+    "globals": "^17.12.0",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.70.1",
+    "vite": "^7.3.6",
+    "vitest": "^5.0.2"
+  }
+}

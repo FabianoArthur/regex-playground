@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Write a regular expression, see what it matches and read what every part of it means, in plain English." />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <title>Regex Playground</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <a class="skip" href="#pattern">Skip to the pattern</a>
+    <header class="top">
+      <div class="brand">
+        <span class="logo" aria-hidden="true">/.*/</span>
+        <div>
+          <h1>Regex Playground</h1>
+          <p class="tagline">Test a regular expression and read what every part of it means.</p>
+        </div>
+      </div>
+      <nav class="top-actions" aria-label="Page">
+        <button type="button" id="share" class="btn">Copy share link</button>
+        <a class="btn ghost" href="https://github.com/FabianoArthur/aula-1" rel="noopener">Source</a>
+      </nav>
+    </header>
+
+    <main class="layout">
+      <section class="panel editor" aria-labelledby="editor-title">
+        <h2 id="editor-title" class="visually-hidden">Pattern and test text</h2>
+
+        <div class="field">
+          <label for="pattern" class="label">Regular expression</label>
+          <div class="pattern-row">
+            <span class="slash" aria-hidden="true">/</span>
+            <div class="overlay pattern-box">
+              <div class="backdrop" id="pattern-backdrop" aria-hidden="true"></div>
+              <input
+                id="pattern"
+                class="mono"
+                type="text"
+                spellcheck="false"
+                autocomplete="off"
+                autocapitalize="off"
+                aria-describedby="pattern-status"
+              />
+            </div>
+            <span class="slash" aria-hidden="true">/</span>
+            <span class="flags-text mono" id="flags-text" aria-hidden="true"></span>
+          </div>
+          <p id="pattern-status" class="status" role="status" aria-live="polite"></p>
+        </div>
+
+        <fieldset class="flags">
+          <legend class="label">Flags</legend>
+          <div id="flags" class="flag-list"></div>
+        </fieldset>
+
+        <div class="field grow">
+          <div class="label-row">
+            <label for="text" class="label">Test text</label>
+            <span id="match-count" class="count" role="status" aria-live="polite"></span>
+          </div>
+          <div class="overlay text-box">
+            <div class="backdrop" id="text-backdrop" aria-hidden="true"></div>
+            <textarea id="text" class="mono" spellcheck="false" rows="9"></textarea>
+          </div>
+        </div>
+
+        <section aria-labelledby="matches-title" class="matches">
+          <h2 id="matches-title" class="section-title">Matches</h2>
+          <ol id="matches" class="match-list"></ol>
+        </section>
+      </section>
+
+      <aside class="side">
+        <section class="panel" aria-labelledby="explain-title">
+          <h2 id="explain-title" class="section-title">What it means</h2>
+          <p class="hint">Hover or focus a line to see which part of the pattern it explains.</p>
+          <div id="explanation" class="explanation"></div>
+          <ul id="flag-notes" class="flag-notes"></ul>
+        </section>
+
+        <section class="panel" aria-labelledby="library-title">
+          <h2 id="library-title" class="section-title">Common patterns</h2>
+          <ul id="library" class="library"></ul>
+        </section>
+      </aside>
+    </main>
+
+    <footer class="foot">
+      <p>
+        Explanations come from a hand-written parser that runs in your browser — nothing you type leaves this page.
+        Matching runs in a Web Worker with a 1&nbsp;s time limit.
+      </p>
+    </footer>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 420" width="880" height="420" role="img" aria-labelledby="title desc" lang="pt-BR">
+<title id="title">Como o Regex Playground funciona</title>
+<desc id="desc">Você digita um padrão, flags e um texto de teste. O padrão vai para um parser escrito à mão (parser.ts), que monta uma árvore sintática; o explain.ts transforma essa árvore em linhas em linguagem natural, mostradas em "What it means". Logo depois, padrão, flags e texto vão para um Web Worker que roda o motor RegExp nativo do JavaScript com limite de 1 segundo; o highlight.ts divide o texto em trechos casados, mostrados como destaques e numa lista de matches com seus grupos. O share.ts guarda padrão, flags e texto no #hash da URL, e o link reproduz o mesmo estado. Tudo roda no navegador.</desc>
+<style>
+text{font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;fill:#e6edf3}
+.b{font-size:14px;font-weight:600}
+.m{font-size:12px;fill:#9198a1}
+.h{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;fill:#9198a1}
+.code{font-family:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;font-size:13.5px;font-weight:600}
+.el{font-size:11.5px;fill:#9198a1;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.bg{fill:#0d1117;stroke:#30363d}
+.zone{fill:#151b23;stroke:#30363d}
+.card{fill:#0d1117;stroke:#3d444d}
+.out{fill:#252a4d;stroke:#8b87ff}
+.chip{fill:#151b23;stroke:#3d444d}
+.lane{fill:#1b2040;opacity:.55}
+.e{fill:none;stroke:#6e7681;stroke-width:1.5}
+.dot{fill:#8b87ff}
+.halo{fill:#8b87ff;opacity:.25}
+.pk{opacity:0}
+@keyframes k0{0%,1%{opacity:0;transform:translate(0,0)}2%{opacity:1;transform:translate(0,0)}12%{opacity:1;transform:translate(60px,0px)}14%,100%{opacity:0;transform:translate(60px,0px)}}
+.p0{animation:k0 7.0s cubic-bezier(.45,0,.55,1) infinite}
+@keyframes k1{0%,11%{opacity:0;transform:translate(0,0)}12%{opacity:1;transform:translate(0,0)}22%{opacity:1;transform:translate(60px,0px)}24%,100%{opacity:0;transform:translate(60px,0px)}}
+.p1{animation:k1 7.0s cubic-bezier(.45,0,.55,1) infinite}
+@keyframes k2{0%,21%{opacity:0;transform:translate(0,0)}22%{opacity:1;transform:translate(0,0)}32%{opacity:1;transform:translate(60px,0px)}34%,100%{opacity:0;transform:translate(60px,0px)}}
+.p2{animation:k2 7.0s cubic-bezier(.45,0,.55,1) infinite}
+@keyframes k3{0%,37%{opacity:0;transform:translate(0,0)}38%{opacity:1;transform:translate(0,0)}48%{opacity:1;transform:translate(60px,0px)}50%,100%{opacity:0;transform:translate(60px,0px)}}
+.p3{animation:k3 7.0s cubic-bezier(.45,0,.55,1) infinite}
+@keyframes k4{0%,47%{opacity:0;transform:translate(0,0)}48%{opacity:1;transform:translate(0,0)}58%{opacity:1;transform:translate(60px,0px)}60%,100%{opacity:0;transform:translate(60px,0px)}}
+.p4{animation:k4 7.0s cubic-bezier(.45,0,.55,1) infinite}
+@keyframes k5{0%,57%{opacity:0;transform:translate(0,0)}58%{opacity:1;transform:translate(0,0)}68%{opacity:1;transform:translate(60px,0px)}70%,100%{opacity:0;transform:translate(60px,0px)}}
+.p5{animation:k5 7.0s cubic-bezier(.45,0,.55,1) infinite}
+@keyframes k6{0%,75%{opacity:0;transform:translate(0,0)}76%{opacity:1;transform:translate(0,0)}86%{opacity:1;transform:translate(0px,28px)}88%,100%{opacity:0;transform:translate(0px,28px)}}
+.p6{animation:k6 7.0s cubic-bezier(.45,0,.55,1) infinite}
+@media (prefers-reduced-motion:reduce){.pk{animation:none;display:none}}
+</style>
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,1 L9,5 L0,9 z" fill="#6e7681"/></marker></defs>
+<rect x="0.5" y="0.5" width="879" height="419" rx="16" class="bg"/>
+<rect x="16" y="16" width="848" height="388" rx="14" class="zone"/>
+<text x="36" y="44" class="h">no seu navegador — nada é enviado para fora</text>
+<rect x="232" y="108" width="624" height="84" rx="12" class="lane"/>
+<rect x="232" y="228" width="624" height="84" rx="12" class="lane"/>
+<text x="248" y="98" class="el">na hora</text>
+<text x="248" y="218" class="el">após 120 ms</text>
+<rect x="40" y="96" width="150" height="222" rx="10" class="card"/>
+<text x="115" y="124" class="b" text-anchor="middle">você digita</text>
+<rect x="54" y="136" width="122" height="30" rx="8" class="chip"/>
+<text x="115" y="156" class="code" text-anchor="middle" style="font-size:12px">padrão + flags</text>
+<rect x="54" y="256" width="122" height="30" rx="8" class="chip"/>
+<text x="115" y="276" class="code" text-anchor="middle" style="font-size:12px">texto de teste</text>
+<text x="115" y="196" class="code" text-anchor="middle" style="font-size:22px;fill:#8b87ff">/.*/</text>
+<text x="115" y="222" class="m" text-anchor="middle">g i m s u v y d</text>
+<rect x="250" y="120" width="150" height="60" rx="10" class="card"/>
+<text x="325" y="146" class="code" text-anchor="middle">parser.ts</text>
+<text x="325" y="165" class="m" text-anchor="middle">descida recursiva</text>
+<rect x="460" y="120" width="150" height="60" rx="10" class="card"/>
+<text x="535" y="146" class="code" text-anchor="middle">explain.ts</text>
+<text x="535" y="165" class="m" text-anchor="middle">árvore → texto claro</text>
+<rect x="670" y="120" width="170" height="60" rx="10" class="out"/>
+<text x="755" y="146" class="b" text-anchor="middle">Explicação</text>
+<text x="755" y="165" class="m" text-anchor="middle">linha ↔ trecho do padrão</text>
+<rect x="250" y="240" width="150" height="60" rx="10" class="card"/>
+<text x="325" y="266" class="b" text-anchor="middle">Web Worker</text>
+<text x="325" y="285" class="m" text-anchor="middle">RegExp nativo · limite 1 s</text>
+<rect x="460" y="240" width="150" height="60" rx="10" class="card"/>
+<text x="535" y="266" class="code" text-anchor="middle">highlight.ts</text>
+<text x="535" y="285" class="m" text-anchor="middle">texto → trechos</text>
+<rect x="670" y="240" width="170" height="60" rx="10" class="out"/>
+<text x="755" y="266" class="b" text-anchor="middle">Matches</text>
+<text x="755" y="285" class="m" text-anchor="middle">destaques + grupos</text>
+<rect x="40" y="346" width="150" height="44" rx="10" class="card"/>
+<text x="115" y="366" class="code" text-anchor="middle">share.ts</text>
+<text x="115" y="382" class="m" text-anchor="middle">estado ↔ #hash da URL</text>
+<path d="M190,150 L250,150" class="e" marker-end="url(#ah)"/>
+<path d="M400,150 L460,150" class="e" marker-end="url(#ah)"/>
+<path d="M610,150 L670,150" class="e" marker-end="url(#ah)"/>
+<path d="M190,270 L250,270" class="e" marker-end="url(#ah)"/>
+<path d="M400,270 L460,270" class="e" marker-end="url(#ah)"/>
+<path d="M610,270 L670,270" class="e" marker-end="url(#ah)"/>
+<path d="M115,318 L115,346" class="e" marker-start="url(#ah)" marker-end="url(#ah)"/>
+<text x="430" y="142" class="el" text-anchor="middle">AST</text>
+<text x="640" y="142" class="el" text-anchor="middle">linhas</text>
+<text x="430" y="262" class="el" text-anchor="middle">matches</text>
+<text x="640" y="262" class="el" text-anchor="middle">trechos</text>
+<g class="pk p0"><circle cx="190" cy="150" r="8" class="halo"/><circle cx="190" cy="150" r="4" class="dot"/></g>
+<g class="pk p1"><circle cx="400" cy="150" r="8" class="halo"/><circle cx="400" cy="150" r="4" class="dot"/></g>
+<g class="pk p2"><circle cx="610" cy="150" r="8" class="halo"/><circle cx="610" cy="150" r="4" class="dot"/></g>
+<g class="pk p3"><circle cx="190" cy="270" r="8" class="halo"/><circle cx="190" cy="270" r="4" class="dot"/></g>
+<g class="pk p4"><circle cx="400" cy="270" r="8" class="halo"/><circle cx="400" cy="270" r="4" class="dot"/></g>
+<g class="pk p5"><circle cx="610" cy="270" r="8" class="halo"/><circle cx="610" cy="270" r="4" class="dot"/></g>
+<g class="pk p6"><circle cx="115" cy="318" r="8" class="halo"/><circle cx="115" cy="318" r="4" class="dot"/></g>
+</svg>
