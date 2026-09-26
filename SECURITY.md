@@ -6,7 +6,7 @@ pattern and the text you type stay in your browser, except for what you put in a
 ## Reporting a vulnerability
 
 Please **do not open a public issue**. Report it privately through
-[GitHub's security advisories](https://github.com/FabianoArthur/aula-1/security/advisories/new)
+[GitHub's security advisories](https://github.com/FabianoArthur/regex-playground/security/advisories/new)
 with steps to reproduce. You can expect a first answer within a week.
 
 In scope: script injection through a pattern, test text or share link, bypasses of the
